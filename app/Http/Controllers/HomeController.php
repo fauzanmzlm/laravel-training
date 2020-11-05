@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $products = \App\Product::paginate(6);
+        return view('home', compact('products'));
     }
 }
