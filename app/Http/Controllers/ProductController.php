@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
 
 use App\Product;
@@ -33,7 +34,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        $categories = Category::all();
+        return view('products.create', compact('categories'));
     }
 
     /**
@@ -51,7 +53,8 @@ class ProductController extends Controller
                 'description' => 'required',
                 'count' => 'required|numeric',
                 'price' => 'required|numeric',
-                'image' => 'required|image|mimes:jpg,jpeg,png|max:2048'
+                'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
+                'category_id' => 'required'
             ]);
 
             $image = time().'.'.$request->image->extension();  
@@ -63,6 +66,7 @@ class ProductController extends Controller
                 'count' => $request->input('count'),
                 'price' => $request->input('price'),
                 'image' => $image,
+                'category_id' => $request->input('category_id')
             ]);
         }
         else
@@ -72,6 +76,7 @@ class ProductController extends Controller
                 'description' => 'required',
                 'count' => 'required|numeric',
                 'price' => 'required|numeric',
+                'category_id' => 'required'
             ]);
 
             Product::create([
@@ -79,6 +84,7 @@ class ProductController extends Controller
                 'description' => $request->input('description'),
                 'count' => $request->input('count'),
                 'price' => $request->input('price'),
+                'category_id' => $request->input('category_id')
             ]);
         }
 
@@ -96,8 +102,9 @@ class ProductController extends Controller
      */
     public function show($id)
     {
+        $categories = Category::all();
         $product = Product::findOrFail($id);
-        return view('products.show', compact('product'));
+        return view('products.show', compact('product','categories'));
     }
 
     /**
@@ -109,6 +116,7 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product = Product::findOrFail($id);
+
         return view('products.edit', compact('product'));
     }
 

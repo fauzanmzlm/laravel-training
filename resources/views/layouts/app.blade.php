@@ -70,6 +70,9 @@
                                     <a class="dropdown-item" href="{{ route('product.index') }}">
                                        Products
                                     </a>
+                                    <a class="dropdown-item" href="{{ route('category.index') }}">
+                                        Categories
+                                     </a>
                                 </div>
                             </li>
                         @endguest

@@ -67,6 +67,21 @@
                         </div>
                     @enderror
                 </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label>Category</label>
+                        <select name="category_id" id="category_id" class="form-control @error('category_id') is-invalid @enderror">
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option> 
+                            @endforeach
+                        </select>
+                        @error('category_id') 
+                            <div class="text-danger">
+                                <label>{{ $message }}</label>
+                            </div>
+                        @enderror
+                    </div>
+                  </div>
                 <button type="submit" class="btn btn-primary">Update</button>
             </form>
         </div>

@@ -17,6 +17,7 @@
                   <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Image</th>
+                    <th scope="col">Category</th>
                     <th scope="col">Name</th>
                     <th scope="col">Description</th>
                     <th scope="col">Total   </th>
@@ -35,6 +36,7 @@
                         <img src="images/noimage.png"  width="150" alt="photo">
                         @endif
                     </td>
+                    <td>{{ $product->category->name }}</td>
                     <td>{{ $product->name }}</td>
                     <td>{{ $product->description }}</td>
                     <td>{{ $product->count }}</td>

@@ -16,13 +16,13 @@
                 <span class="font-weight-bold">Name</span> : {{ $product->name }}
             </div>
             <div class="form-group">
-                <span class="font-weight-bold">Decription</span> : {{ $product->name }}
+                <span class="font-weight-bold">Decription</span> : {{ $product->description }}
             </div>
             <div class="form-group">
-                <span class="font-weight-bold">Count</span> : {{ $product->name }}
+                <span class="font-weight-bold">Total</span> : {{ $product->count }}
             </div>
             <div class="form-group">
-                <span class="font-weight-bold">Price</span> : RM {{ $product->name }}
+                <span class="font-weight-bold">Price</span> : RM {{ $product->price }}
             </div>
             <div class="form-group">
                 <label class="font-weight-bold">Photo :</label>
