@@ -26,16 +26,16 @@
                     <th scope="row">{{ $category->id }}</th>
                     <td>{{ $category->name }}</td>
                     <td>
-                        <a href="{{ route('category.show', $category->id) }}" class="btn btn-sm btn-info">
+                        <a href="{{ route('category.show', $category->id) }}" class="btn btn-info">
                             <i class="fa fa-info"></i> Show
                         </a> 
-                        <a href="{{ route('category.edit', $category->id) }}" class="btn btn-sm btn-warning">
+                        <a href="{{ route('category.edit', $category->id) }}" class="btn btn-warning">
                             <i class="fa fa-pencil"></i> Edit
                         </a>
                         <form style="display:inline;" action="{{ route('category.destroy', $category->id) }}" method="post">
                             @csrf
                             @method('delete')
-                            <button type="submit" class="btn btn-sm btn-danger">
+                            <button type="submit" class="btn btn-danger">
                                 <i class="fa fa-trash"></i> Delete
                             </button>
                         </form>

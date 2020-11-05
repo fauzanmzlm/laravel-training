@@ -4,7 +4,7 @@
 
 @section('content')
 <div>
-    <a href="{{ route('product.create') }}" class="btn btn-sm btn-success my-2">
+    <a href="{{ route('product.create') }}" class="btn btn-success my-2">
         <i class="fa fa-plus"></i> Create
     </a>
     <div class="card">
@@ -42,16 +42,16 @@
                     <td>{{ $product->count }}</td>
                     <td>{{ $product->price }}</td>
                     <td>
-                        <a href="{{ route('product.show', $product->id) }}" class="btn btn-sm btn-info">
+                        <a href="{{ route('product.show', $product->id) }}" class="btn btn-info">
                             <i class="fa fa-info"></i> Show
                         </a> 
-                        <a href="{{ route('product.edit', $product->id) }}" class="btn btn-sm btn-warning">
+                        <a href="{{ route('product.edit', $product->id) }}" class="btn btn-warning">
                             <i class="fa fa-pencil"></i> Edit
                         </a>
                         <form style="display:inline;" action="{{ route('product.destroy', $product->id) }}" method="post">
                             @csrf
                             @method('delete')
-                            <button type="submit" class="btn btn-sm btn-danger">
+                            <button type="submit" class="btn btn-danger">
                                 <i class="fa fa-trash"></i> Delete
                             </button>
                         </form>
