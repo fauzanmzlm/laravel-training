@@ -22,7 +22,7 @@
                 <div class="row">
                     @foreach($products as $product)
                     <div class="col-md-4">
-                        <div class="card my-3" style="width: 18rem;">
+                        <div class="card my-3" style="width: 100%;">
                         @if($product->image)
                         <img class="card-img-top" src="{{ url('images/'.$product->image) }}" width="150" height="150" style="object-fit: cover;" alt="photo">
                         @else

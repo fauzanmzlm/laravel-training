@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('title','Create Category')
+@section('title','Category')
 
 @section('content')
 <div>
-    <a href="{{ route('category.create') }}" class="btn btn-sm btn-success my-2">
+    <a href="{{ route('category.create') }}" class="btn btn-success my-2">
         <i class="fa fa-plus"></i> Create
     </a>
     <div class="card">
